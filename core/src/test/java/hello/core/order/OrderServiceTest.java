@@ -8,7 +8,7 @@ import org.junit.jupiter.api.*;
 public class OrderServiceTest {
 
     MemberService memberService = new MemberServiceImpl(null);
-    OrderService orderService = new OrderServiceImpl();
+    OrderService orderService = new OrderServiceImpl(null, null);
 
     @Test
     void createOrder() {
