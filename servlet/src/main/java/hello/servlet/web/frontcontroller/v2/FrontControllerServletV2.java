@@ -2,8 +2,6 @@ package hello.servlet.web.frontcontroller.v2;
 
 
 import hello.servlet.web.frontcontroller.*;
-import hello.servlet.web.frontcontroller.v1.*;
-import hello.servlet.web.frontcontroller.v1.controller.*;
 import hello.servlet.web.frontcontroller.v2.controller.*;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.*;
@@ -34,6 +32,6 @@ import java.util.*;
              response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 return; }
     MyView view = controller.process(request, response);
-         view.render(request, response);
+         view.render(mv.getModel(), request, response);
      }
 }

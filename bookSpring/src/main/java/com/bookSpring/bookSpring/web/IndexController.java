@@ -1,8 +1,11 @@
 package com.bookSpring.bookSpring.web;
 
 import ch.qos.logback.core.model.*;
+import com.bookSpring.bookSpring.config.auth.*;
+import com.bookSpring.bookSpring.config.auth.dto.*;
 import com.bookSpring.bookSpring.service.posts.*;
 import com.bookSpring.bookSpring.web.dto.*;
+import jakarta.servlet.http.*;
 import lombok.*;
 import org.springframework.stereotype.*;
 import org.springframework.ui.Model;
@@ -15,8 +18,11 @@ public class IndexController {
     private final PostsService postsService;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+        }
         return "index";
     }
 

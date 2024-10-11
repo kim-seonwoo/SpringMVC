@@ -24,11 +24,14 @@ dependencies {
     // Spring Data JPA 의존성 추가
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+
     // H2 데이터베이스 의존성 추가
     runtimeOnly 'com.h2database:h2'
 
     implementation 'org.projectlombok:lombok'
     implementation 'org.springframework.boot:spring-boot-starter-mustache'
+    implementation 'org.springframework.session:spring-session-jdbc'
 
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
