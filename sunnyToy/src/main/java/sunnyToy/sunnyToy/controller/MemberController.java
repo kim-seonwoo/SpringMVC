@@ -31,7 +31,7 @@ public class MemberController {
 
     // 생성
     @PostMapping
-    public ResponseEntity<Void> createMember(@RequestBody MemberCreateRequest request) {
+    public ResponseEntity<Void> createMember(@RequestBody MemberCreateR2equest request) {
         URI location =  URI.create(memberService.create(request));
         return ResponseEntity.created(location).build();
     }
